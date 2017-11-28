@@ -8,11 +8,22 @@
 
 import UIKit
 
+@IBDesignable // Add this line to see your custom changes in InterFace Builder.  Must also add a Function.
+
 class CurrencyTxtField: UITextField {
+    
+    // Function to see custom changes in InterFace Builder.
+    override func prepareForInterfaceBuilder() {
+        customizedView()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        customizedView()
+    }
+    
+    // Set all my change codes into a Function and call function in both prepareForIB and awakeFromNib.
+    func customizedView() {
         /*
          Set textField colour to white
          25% opac (somewhat seethrough)
@@ -42,10 +53,5 @@ class CurrencyTxtField: UITextField {
         /*
          End change colour of Placeholder
          */
-        
-        
-        
     }
-    
-    
 }
