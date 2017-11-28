@@ -43,13 +43,6 @@ class CurrencyTxtField: UITextField {
          End change colour of Placeholder
          */
         
-        /*
-         Set textField colour to white
-         25% opac (somewhat seethrough)
-         Round corners of the TextField
-         align text to center
-         Change colour of Placeholder text
-         */
         
         
     }
