@@ -16,6 +16,13 @@ class Wage {
      */
     
     class func getHours(forWage wage: Double, andPrice price: Double)-> Int {
+        
+        /*
+        //print("\(Int(round(price / wage)))") -> Test the failed code to see why it failed.
+        // Below code will fail because round rounds down.
+        return Int(round(price / wage)) // -> This will fail the test.
+        */
+        
         // ceil rounds up the result.
         return Int(ceil(price / wage))
     }
