@@ -51,7 +51,17 @@ class MainVC: UIViewController {
     
     // Calculate Button Function
     @objc func calculate() {
-        print("Test Working")
+        // Make sure wageTxt and priceTxt isn't Nil.
+        if let wageTxt = wageTxt.text, let priceTxt = priceTxt.text {
+            // Make sure we can cast the 2 Strings to Doubles.
+            if let wage = Double(wageTxt), let price = Double(priceTxt) {
+                // Dismiss keyboard
+                view.endEditing(true)
+                resultLbl.isHidden = false
+                hoursLbl.isHidden = false
+                resultLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+            }
+        }
     }
     
     /*
