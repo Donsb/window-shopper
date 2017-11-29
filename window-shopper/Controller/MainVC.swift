@@ -16,6 +16,8 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var wageTxt: CurrencyTxtField!
     @IBOutlet weak var priceTxt: CurrencyTxtField!
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var hoursLbl: UILabel!
     
     /*
      Functions
@@ -36,6 +38,10 @@ class MainVC: UIViewController {
         
         wageTxt.inputAccessoryView = calcBtn
         priceTxt.inputAccessoryView = calcBtn
+        
+        // Hide Labels
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,5 +53,24 @@ class MainVC: UIViewController {
     @objc func calculate() {
         print("Test Working")
     }
+    
+    /*
+     Clear Calcutator Button Pressed Function.
+     */
+    
+    @IBAction func clearCalculatorPressed(_ sender: Any) {
+        
+        // Hide Labels & Clear Test Fields.
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
+        wageTxt.text = ""
+        priceTxt.text = ""
+        
+    }
+    
+    /*
+     END Clear Calaculator Button Pressed Function.
+     */
+    
 }
 
