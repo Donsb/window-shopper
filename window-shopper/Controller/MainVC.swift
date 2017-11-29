@@ -23,6 +23,10 @@ class MainVC: UIViewController {
      Functions
      */
     
+    /*
+     View Did Load
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Create UIButton attaching to the textfield's keyboard.
@@ -43,13 +47,28 @@ class MainVC: UIViewController {
         resultLbl.isHidden = true
         hoursLbl.isHidden = true
     }
-
+    /*
+     END View Did Load.
+     */
+    
+    
+    /*
+     Did Receive Memory Warning.
+     */
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    /*
+     END Did Receive Memory Warning.
+     */
     
-    // Calculate Button Function
+    
+    /*
+     Calculate Button Function
+     */
+    
     @objc func calculate() {
         // Make sure wageTxt and priceTxt isn't Nil.
         if let wageTxt = wageTxt.text, let priceTxt = priceTxt.text {
@@ -60,9 +79,14 @@ class MainVC: UIViewController {
                 resultLbl.isHidden = false
                 hoursLbl.isHidden = false
                 resultLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+                //print(resultLbl.text)
             }
         }
     }
+    /*
+     END Calculate Button Function.
+     */
+    
     
     /*
      Clear Calcutator Button Pressed Function.
@@ -77,7 +101,6 @@ class MainVC: UIViewController {
         priceTxt.text = ""
         
     }
-    
     /*
      END Clear Calaculator Button Pressed Function.
      */
